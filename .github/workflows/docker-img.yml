@@ -33,10 +33,11 @@ jobs:
         with:
           load: true
           tags: img-template:${{ steps.image_info.outputs.tag }}
-          outputs: type=docker,dest=/tmp/img-template.tar
 
       - name: Test
-        run: docker run --rm img-template:${{ steps.image_info.outputs.tag }}
+        run: |
+          docker run --rm img-template:${{ steps.image_info.outputs.tag }}
+          docker save img-template:${{ steps.image_info.outputs.tag }} > /tmp/img-template.tar
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
