@@ -42,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: img-template:${{ steps.image_info.outputs.tag }}
+          name: img-template-${{ steps.image_info.outputs.tag }}
           path: /tmp/img-template.tar
 
       - name: Build image and push to GitHub Container Registry
