@@ -43,6 +43,7 @@ jobs:
     steps:
       - name: Set Image Info
         run: |
+          echo "::set-output name=tag::$(date +'%Y-%m-%d')-${{ github.run_number }}"
           echo "::set-output name=created::$(date --rfc-3339=seconds | sed 's/ /T/')"
         id: image_info
 
@@ -87,5 +88,19 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.version=${{ env.SEMVER }}
             org.opencontainers.image.created=${{ steps.image_info.outputs.created }}
+          push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Install GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/setup@v0.9.2
+        with:
+          versionSpec: '0.10.x'
+
+      - uses: gittools/actions/gitreleasemanager/publish@v0.9.2
+        name: Publish release with GitReleaseManager
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ github.repository_owner }}
+          repository: ${{ github.repository }}
+          tagName: ${{ env.SEMVER }}
