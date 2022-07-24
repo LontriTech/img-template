@@ -123,3 +123,11 @@ jobs:
           repository: "img-template"
           name: ${{ env.SEMVER }}
           assets: tmp/img-template-${{ env.SEMVER }}
+
+      - name: Publish release with GitReleaseManager
+        uses: gittools/actions/gitreleasemanager/publish@v0.9.13
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ github.repository_owner }}
+          repository: "img-template"
+          tagName: ${{ env.SEMVER }}
