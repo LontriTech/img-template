@@ -101,6 +101,9 @@ jobs:
       SEMVER: ${{ needs.determine-version.outputs.semVer }}
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Download Docker Image Tar
         uses: actions/download-artifact@master
         with:
