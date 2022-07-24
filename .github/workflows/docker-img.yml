@@ -113,7 +113,7 @@ jobs:
           versionSpec: '0.10.x'
 
       - name: Publish release with GitReleaseManager
-        uses: gittools/actions/gitreleasemanager/publish@v0.9.13
+        uses: gittools/actions/gitreleasemanager/create@v0.9.13
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}
