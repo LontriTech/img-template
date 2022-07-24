@@ -117,6 +117,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}
-          repository: ${{ github.repository }}
-          tagName: ${{ env.SEMVER }}
+          repository: "img-template"
+          name: ${{ env.SEMVER }}
           assets: tmp/img-template-${{ env.SEMVER }}
