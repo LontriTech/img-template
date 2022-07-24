@@ -39,7 +39,7 @@ branches:
     pre-release-weight: 30000
 
   fix:
-    regex: ^fix?[/-]
+    regex: ^fix[/-]
     mode: ContinuousDelivery
     tag: beta
     increment: Patch
