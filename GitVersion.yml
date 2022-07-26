@@ -1,7 +1,7 @@
 branches:
   main:
     regex: ^master$|^main$
-    mode: ContinuousDelivery
+    mode: Mainline
     tag: ''
     increment: Patch
     prevent-increment-of-merged-branch-version: true
@@ -13,7 +13,7 @@ branches:
 
   breaking:
     regex: ^break[/-]
-    mode: ContinuousDelivery
+    mode: Mainline
     tag: PullRequest
     increment: Major
     prevent-increment-of-merged-branch-version: false
@@ -27,7 +27,7 @@ branches:
 
   feature:
     regex: ^feat[/-]
-    mode: ContinuousDelivery
+    mode: Mainline
     tag: useBranchName
     increment: Minor
     prevent-increment-of-merged-branch-version: false
@@ -40,7 +40,7 @@ branches:
 
   fix:
     regex: ^fix[/-]
-    mode: ContinuousDelivery
+    mode: Mainline
     tag: beta
     increment: Patch
     prevent-increment-of-merged-branch-version: false
