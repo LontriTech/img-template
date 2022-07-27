@@ -88,6 +88,6 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.version=${{ env.SEMVER }}
             org.opencontainers.image.created=${{ steps.image_info.outputs.created }}
-          push: true
+          push: ${{ github.ref == 'refs/heads/main' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
