@@ -6,3 +6,10 @@ updates:
       interval: "daily"
     reviewers:
       - "fr-platform/maintainers"
+      
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    reviewers:
+      - "fr-platform/maintainers"
