@@ -1,0 +1,80 @@
+# More on Git Ignore: https://git-scm.com/docs/gitignore
+
+# Logs and temp files
+*.log
+*.tmp
+*.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Bash history file
+.bash_history
+
+# Backup files created by Bash
+*~
+
+# Bash execution output files
+*.out
+*.bak
+*.swp
+
+# GitHub Actions
+.github/workflows/*.log
+.github/actions/*.log
+
+# GitHub Actions cache
+.github/actions/cache
+
+# VS Code workspace settings
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# VS Code extensions directories
+.vscode-test/
+.vscode-extensions/
+
+# node modules
+node_modules/
+
+# environment vars
+.env
+.env.local
+.env.production
+.env.test
+
+# Compiled code or temporary files
+*.pyc
+*.class
+*.o
+
+# Build output and distribution directories
+dist/
+build/
+
+# Lock files
+package-lock.json
+yarn.lock
+pipfile.lock
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Sublime project settings
+*.sublime-workspace
+*.sublime-project
+
+# Vim temporary files
+*.swp
+*.swo
+
+# Emacs backup files
+*~
+
+# Shellcheck temporary files
+*.shellcheck
